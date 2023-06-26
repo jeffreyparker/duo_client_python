@@ -10,7 +10,7 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: cyclonedx-json
-          path: ./cyclonedx-sbom.json
+          path: ./cyclonedx-sbom
       - name: Convert SBOM
         run: |
           wget https://github.com/CycloneDX/cyclonedx-cli/releases/download/v0.24.2/cyclonedx-linux-x64
@@ -18,8 +18,8 @@ jobs:
           chmod a+rw ./cyclonedx-sbom.json
           ls -l ./cyclonedx-sbom.json
           touch ./cyclonedx-sbom.json
-          cat ./cyclonedx-sbom.json
-          ./cyclonedx-linux-x64 convert --input-format json --output-format spdxjson --input-file cyclonedx-sbom.json --output-file spdx.json
+          cat ./cyclonedx-sbom/cyclonedx-sbom.json
+          ./cyclonedx-linux-x64 convert --input-format json --output-format spdxjson --input-file cyclonedx-sbom/cyclonedx-sbom.json --output-file spdx.json
         shell: bash
       - uses: actions/upload-artifact@master
         with:
