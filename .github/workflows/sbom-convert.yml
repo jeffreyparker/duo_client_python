@@ -18,6 +18,7 @@ jobs:
           chmod a+rw ./cyclonedx-sbom.json
           ls -l ./cyclonedx-sbom.json
           touch ./cyclonedx-sbom.json
+          cat ./cyclonedx-sbom.json
           ./cyclonedx-linux-x64 convert --input-format json --output-format spdxjson --input-file cyclonedx-sbom.json --output-file spdx.json
         shell: bash
       - uses: actions/upload-artifact@master
