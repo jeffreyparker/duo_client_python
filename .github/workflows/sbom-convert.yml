@@ -1,5 +1,8 @@
 name: Workflow for converting CycloneDX SBOM files to SPDX format
 
+on:
+  workflow_call:
+
 jobs:
   convert:
     runs-on: ubuntu-latest
