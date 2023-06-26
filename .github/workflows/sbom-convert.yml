@@ -15,9 +15,6 @@ jobs:
         run: |
           wget https://github.com/CycloneDX/cyclonedx-cli/releases/download/v0.24.2/cyclonedx-linux-x64
           chmod a+x cyclonedx-linux-x64
-          chmod a+rw ./cyclonedx-sbom.json
-          ls -l ./cyclonedx-sbom.json
-          touch ./cyclonedx-sbom.json
           cat ./cyclonedx-sbom/cyclonedx-sbom.json
           ./cyclonedx-linux-x64 convert --input-format json --output-format spdxjson --input-file cyclonedx-sbom/cyclonedx-sbom.json --output-file spdx.json
         shell: bash
