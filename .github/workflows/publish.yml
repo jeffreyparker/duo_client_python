@@ -39,7 +39,7 @@ jobs:
         path: ./cyclonedx-sbom.json
 
   convert:
-    uses: duosecurity/duo_client_python/.github/workflows/sbom-convert.yml@sbom-workflow
+    uses: mbish/duo_client_python/.github/workflows/sbom-convert.yml@sbom-workflow
 
   deploy:
     runs-on: ubuntu-latest
