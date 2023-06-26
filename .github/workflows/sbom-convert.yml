@@ -1,0 +1,17 @@
+name: Workflow for converting CycloneDX SBOM files to SPDX format
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: cyclonedx-json
+          path: ./cyclonedx-sbom.json
+      - name: Convert SBOM
+        run: |
+          ./scripts/make-sbom.sh
+      - uses: actions/upload-artifact@master
+        with:
+          name: spdx-sbom
+          path: spdx.json
