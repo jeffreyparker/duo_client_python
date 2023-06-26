@@ -39,9 +39,11 @@ jobs:
         path: ./cyclonedx-sbom.json
 
   convert:
+    needs: [build]
     uses: mbish/duo_client_python/.github/workflows/sbom-convert.yml@sbom-workflow
 
   deploy:
+    needs: [build, convert]
     runs-on: ubuntu-latest
 
     steps:
