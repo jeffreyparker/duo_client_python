@@ -40,7 +40,7 @@ jobs:
 
   convert:
     # users: duosecurity/duo_client_python/.github/workflows/sbom-convert.yml@main
-    uses: ./sbom-convert.yml
+    uses: ./sbom-convert.yml@sbom-workflow
 
   deploy:
     runs-on: ubuntu-latest
