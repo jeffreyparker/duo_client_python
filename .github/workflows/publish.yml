@@ -30,17 +30,13 @@ jobs:
       run: |
         python setup.py sdist bdist_wheel
     - uses: actions/upload-artifact@master
-        with:
-          name: build-directory
-          path: ./
+      with:
+        name: build-directory
+        path: ./
     - uses: actions/upload-artifact@master
-        with:
-          name: build-directory
-          path: ./
-    - uses: actions/upload-artifact@master
-        with:
-          name: cyclonedx-json
-          path: ./cyclonedx-sbom.json
+      with:
+        name: cyclonedx-json
+        path: ./cyclonedx-sbom.json
 
   convert:
     # users: duosecurity/duo_client_python/.github/workflows/sbom-convert.yml@main
@@ -57,13 +53,13 @@ jobs:
         # this is just the version that twine runs on
         python-version: '3.x'
     - uses: actions/download-artifact@master
-        with:
-          name: build-directory
-          path: ./
+      with:
+        name: build-directory
+        path: ./
     - uses: actions/download-artifact@master
-        with:
-          name: spdx-sbom
-          path: spdx.json
+      with:
+        name: spdx-sbom
+        path: spdx.json
 
     - name: Install dependencies
       run: |
