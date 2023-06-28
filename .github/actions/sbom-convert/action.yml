@@ -6,5 +6,5 @@ runs:
       run: |
         wget https://github.com/CycloneDX/cyclonedx-cli/releases/download/v0.24.2/cyclonedx-linux-x64
         chmod a+x cyclonedx-linux-x64
-        ./cyclonedx-linux-x64 convert --input-format json --output-format spdxjson --input-file cyclonedx-sbom/cyclonedx-sbom.json --output-file spdx.json
+        ./cyclonedx-linux-x64 convert --input-format json --output-format spdxjson --input-file cyclonedx-sbom.json --output-file spdx.json
       shell: bash
