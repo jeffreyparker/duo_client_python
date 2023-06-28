@@ -28,6 +28,7 @@ jobs:
         cyclonedx-py --e --format json -o cyclonedx-sbom.json
     - name: Convert SBOM
       uses: ./.github/actions/sbom-convert
+      uses: jeffreyparker/duo_client_python/actions/sbom-convert@sbom-composite-action
     - name: Build and publish
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
